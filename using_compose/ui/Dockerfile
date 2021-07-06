@@ -11,7 +11,7 @@ RUN NG_CLI_ANALYTICS=ci npm install
 RUN ng build
 
 ###Second FROM###
-FROM nginx:alpine
+FROM nginx:1.21-alpine
 WORKDIR /app
 COPY --from=build /build/dist poolmanage-ui
 COPY nginx.conf /etc/nginx/nginx.conf
